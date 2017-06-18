@@ -16,13 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithTitle:@"To Front Door" style:UIBarButtonItemStylePlain target:self action:@selector(toFrontDoor:)];
+    
+    self.navigationItem.rightBarButtonItem = button;
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)toFrontDoor:(UIBarButtonItem*)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
